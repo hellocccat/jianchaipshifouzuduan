@@ -2,6 +2,12 @@
 
 利用 `PHP socket` 去监测指定 `域名/IP` 的 `TCP` 和 `ICMP` 是否开放.
 
+请开启 `exec()` 函数.
+
+测试环境为:宝塔面板 PHP7.0+ nginx1.15 
+
+请安装 `PHP socket` 扩展,否则无法使用哦
+
 > 已知问题在Linux下 `socket` 检测 `icmp`,会没有权限.现只能用 `exec()` 函数
 
 ## 部署方法
