@@ -17,9 +17,8 @@ $('.mdui-btn').click(function(){
 			}else{
 				$('#cntcp').html(data.tcp);
 				$('#cnicmp').html(data.icmp);
-				$(".mdui-btn").removeAttr("disabled");
 			}
-			
+			$(".mdui-btn").removeAttr("disabled");
 		});
 		// 国外
 		$.post(enurl,{'ip':ip,'port':port},function(data){
@@ -29,8 +28,8 @@ $('.mdui-btn').click(function(){
 			}else{
 				$('#entcp').html(data.tcp);
 				$('#enicmp').html(data.icmp);
-				$(".mdui-btn").removeAttr("disabled");
 			}
+			$(".mdui-btn").removeAttr("disabled");
 		});
 		return false;
 	});
