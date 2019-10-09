@@ -144,9 +144,9 @@ header('Access-Control-Allow-Methods:POST');
 
 header('Access-Control-Allow-Headers:x-requested-with, content-type');
 
-$ip = @$_GET['ip'];
+$ip = @$_POST['ip'];
 
-$port = @$_GET['port'];
+$port = @$_POST['port'];
 
 if (empty($ip) || empty($port)) {
 
