@@ -144,9 +144,9 @@ header('Access-Control-Allow-Methods:POST');
 
 header('Access-Control-Allow-Headers:x-requested-with, content-type');
 
-$ip = @$_POST['ip'];
+$ip = @$_GET['ip'];
 
-$port = @$_POST['port'];
+$port = @$_GET['port'];
 
 if (empty($ip) || empty($port)) {
 
@@ -154,8 +154,13 @@ if (empty($ip) || empty($port)) {
 
 } else {
 
-	$health = new CheckIp();
+	if (preg_match('/([a-zA-Z]|[0-9]|\.)+$/', $ip)) {
+		$health = new CheckIp();
 
-	echo $health->check($ip, $port);
+		echo $health->check($ip, $port);
+
+	} else {
+		echo json_encode(['code' => 1, 'msg' => '非法参数']);
+	}
 
 }
