@@ -154,7 +154,7 @@ if (empty($ip) || empty($port)) {
 
 } else {
 
-	if (!preg_match('/(&|\s|;|-|\\)/', $ip)) {
+	if (!preg_match('/(&|\s|;|-)/', $ip)) {
 		$health = new CheckIp();
 
 		echo $health->check($ip, $port);
